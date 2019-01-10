@@ -21,7 +21,7 @@ const config = {
 
 app.get('/', (req,res,next) => {
 
-    res.status(200).send("working");
+   // res.status(200).send("working");
 
     pool.connect((err,client,done) => {
         if(err)
