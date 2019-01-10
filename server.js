@@ -11,7 +11,7 @@ const config =
     user: 'postgres_11x',
     database: 'aeroGMS',
     password: 'postgres_11x',
-        host:'aerogms.czb0ha2nucbq.ap-south-1.rds.amazonaws.com',
+       // host:'aerogms.czb0ha2nucbq.ap-south-1.rds.amazonaws.com',
     port: 5432,
     max : 20,
     idleTimeoutMillis: 10000, // close idle clients after 1 second
