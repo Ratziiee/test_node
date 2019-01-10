@@ -33,21 +33,21 @@ app.get('/', (req,res,next) => {
         else
         {
             console.log('connected');
-            res.send('connected');
-            //  client.query('select * from test',(err,result) => {
-            // //client.query('INSERT INTO public.test(id, name, age) VALUES (7, \'praveen kumar\', 98);',(err,result) => {
-            //     done();
-            //     if(err)
-            //     {
-            //         console.log('checking error : '+err)
-            //     }
-            //     else
-            //     {
-            //         console.log(result.rows);
-            //         res.send(result.rows);
-            //
-            //     }
-            // });
+           // res.send('connected');
+              client.query('select * from demo',(err,result) => {
+             //client.query('INSERT INTO public.test(id, name, age) VALUES (7, \'praveen kumar\', 98);',(err,result) => {
+                 done();
+                 if(err)
+                 {
+                     console.log('checking error : '+err)
+                 }
+                 else
+                 {
+                     console.log(result.rows);
+                     res.send(result.rows);
+
+                 }
+             });
         }
     });
 });
