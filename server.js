@@ -4,6 +4,7 @@ const pg = ('pg');
 const Pool = require('pg-pool');
 const app = express();
 
+app.set('port',process.env.PORT || 3001);
 var connString = "postgres://postgres:admin@localhost:5432/postgres";
 const config = {
     user: 'postgres',
@@ -115,6 +116,12 @@ app.get('/bad', (req,res) => {
     res.send(error_obj);
 });
 
-app.listen(3001,() => {
-    console.log('Listening to 3001')
+app.listen(app.get('port'),(err, result) => {
+    if(err)
+    {
+        console.log(err);
+    }
+    else {
+        console.log('Listening to 3001')
+    }
 });
