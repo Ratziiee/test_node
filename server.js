@@ -8,7 +8,7 @@ app.set('port',process.env.PORT || 3001);
 var connString = "postgres://postgres:admin@localhost:5432/postgres";
 const config = {
     user: 'postgres',
-    database: 'postgres',
+    database: 'aerogms',
     password: 'admin',
     port: 5432,
     max : 20,
@@ -16,12 +16,12 @@ const config = {
     connectionTimeoutMillis: 1000
 };
 
- //var pool = new Pool(config);
+ // var pool = new Pool(config);
 
 
 app.get('/', (req,res,next) => {
 
-    res.status(200).send("working");
+   // res.status(200).send("working");
 
     // pool.connect((err,client,done) => {
     //     if(err)
@@ -32,7 +32,7 @@ app.get('/', (req,res,next) => {
     //     {
     //         console.log('connected');
     //          client.query('select * from test',(err,result) => {
-    //         //client.query('INSERT INTO public.test(id, name, age) VALUES (5, \'rajat upadhyay asdsadsda\', 50);',(err,result) => {
+    //         //client.query('INSERT INTO public.test(id, name, age) VALUES (7, \'praveen kumar\', 98);',(err,result) => {
     //             done();
     //             if(err)
     //             {
