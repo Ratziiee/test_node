@@ -9,7 +9,7 @@ var connString = "postgres://postgres:admin@localhost:5432/postgres";
 const config =
     {
     user: 'postgres_11x',
-    database: 'aerogms',
+    database: 'aeroGMS',
     password: 'postgres_11x',
     port: 5432,
     max : 20,
