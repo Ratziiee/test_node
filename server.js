@@ -6,50 +6,50 @@ const app = express();
 
 app.set('port',process.env.PORT || 3001);
 var connString = "postgres://postgres:admin@localhost:5432/postgres";
-const config = {
-    user: 'postgres',
+const config =
+    {
+    user: 'postgres_11x',
     database: 'aerogms',
-    password: 'admin',
+    password: 'postgres_11x',
     port: 5432,
     max : 20,
-    idleTimeoutMillis: 1000, // close idle clients after 1 second
+    idleTimeoutMillis: 10000, // close idle clients after 1 second
     connectionTimeoutMillis: 1000
 };
 
- // var pool = new Pool(config);
-
+ var pool = new Pool(config);
 
 app.get('/', (req,res,next) => {
 
    // res.status(200).send("working");
 
-    // pool.connect((err,client,done) => {
-    //     if(err)
-    //     {
-    //         console.log('error '+err);
-    //     }
-    //     else
-    //     {
-    //         console.log('connected');
-    //          client.query('select * from test',(err,result) => {
-    //         //client.query('INSERT INTO public.test(id, name, age) VALUES (7, \'praveen kumar\', 98);',(err,result) => {
-    //             done();
-    //             if(err)
-    //             {
-    //                 console.log('checking error : '+err)
-    //             }
-    //             else
-    //             {
-    //                 console.log(result.rows);
-    //                 res.send(result.rows);
-    //
-    //             }
-    //         });
-    //
-    //     }
-    // });
+    pool.connect((err,client,done) => {
+        if(err)
+        {
+            console.log('error '+err);
+            res.send(err);
+        }
+        else
+        {
+            console.log('connected');
+            res.send('connected');
+            //  client.query('select * from test',(err,result) => {
+            // //client.query('INSERT INTO public.test(id, name, age) VALUES (7, \'praveen kumar\', 98);',(err,result) => {
+            //     done();
+            //     if(err)
+            //     {
+            //         console.log('checking error : '+err)
+            //     }
+            //     else
+            //     {
+            //         console.log(result.rows);
+            //         res.send(result.rows);
+            //
+            //     }
+            // });
+        }
+    });
 });
-
 
 
 hbs.registerPartials(__dirname + '/views/partials')
